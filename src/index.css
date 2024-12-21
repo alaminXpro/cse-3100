@@ -1,32 +1,54 @@
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-header {
-  padding: 1em;
-}
+@layer components {
+  .layout {
+    @apply flex flex-col min-h-screen;
+  }
 
-main {
-  flex: 1;
-  padding: 1em;
-}
-footer {
-  padding: 1em;
-  text-align: center;
-}
+  .team-card {
+    @apply flex flex-col bg-grey-700 rounded-lg shadow-lg overflow-hidden 
+           transition-transform duration-300 hover:scale-105 
+           dark:bg-gray-800;
+  }
 
-.cat-card {
-  border: 1px solid #ddd;
-  text-align: center;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
+  .team-image {
+    @apply w-full h-64 object-cover;
+  }
 
-.cat-info {
-  background: #f8f9fa;
-  border-radius: 4px;
+  .team-content {
+    @apply p-5 space-y-2;
+  }
+
+  header {
+    padding: 1em;
+  }
+
+  main {
+    flex: 1;
+    padding: 1em;
+  }
+  footer {
+    padding: 1em;
+    text-align: center;
+  }
+
+  .cat-card {
+    border: 1px solid #ddd;
+    text-align: center;
+    min-height: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  .cat-info {
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 10px;
+  }
 }
